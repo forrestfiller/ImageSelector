@@ -13,9 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+//this normally launches the storyboard..now that we deleted, we have to create the first view from zero!
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let homeVc = ISViewController()
+        self.window?.rootViewController = UINavigationController(rootViewController: homeVc)
+
+        self.window?.makeKeyAndVisible()
         return true
     }
 
