@@ -39,6 +39,14 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
     func selectPhotoSource(){
         print("selectPhotoSource")
         
+        let actionSheet = UIAlertController(
+            title: "Select Image Source",
+            message: nil,
+            preferredStyle: .ActionSheet
+        )
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
