@@ -8,12 +8,19 @@
 
 import UIKit
 
-class ISViewController: UIViewController {
+class ISViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var imagesTable: UITableView!
     
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
         let view = UIView(frame: frame)
         view.backgroundColor = .redColor()
+        
+        self.imagesTable = UITableView(frame: frame, style: .Plain)
+        self.imagesTable.dataSource = self
+        self.imagesTable.delegate = self
+        view.addSubview(self.imagesTable)
         
         self.view = view
     }
@@ -21,6 +28,21 @@ class ISViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellId = "cellId"
+        if let cell = tableView.dequeueReusableCellWithIdentifier(cellId){
+            cell.textLabel?.text = "\(indexPath.row)"
+            return cell
+        }
+        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellId)
+        cell.textLabel?.text = "\(indexPath.row)"
+        return cell
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
