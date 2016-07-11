@@ -32,8 +32,13 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
             title: "Pick Image",
             style:  .Plain,
             target:  self,
-            action:  nil
+            action:  #selector(ISViewController.selectPhotoSource)
         )
+    }
+    
+    func selectPhotoSource(){
+        print("selectPhotoSource")
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
