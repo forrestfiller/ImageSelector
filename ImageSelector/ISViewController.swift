@@ -12,6 +12,7 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
     var imagesTable: UITableView!
     var imagesArray = Array<UIImage>() //instansiate this array right away
+    var _image: ImageViewController!
     
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
@@ -71,8 +72,8 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
             
             self.imagesTable.reloadData()
             picker.dismissViewControllerAnimated(true, completion: nil)
-            
         }
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,6 +93,16 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.textLabel?.text = "\(indexPath.row)"
         cell.imageView?.image = _image
         return cell
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        //animate cell when selected:
+        tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true)
+        // seque to new instaVc:
+        let _image = self.imagesArray[indexPath.row]
+        let imageVc = ImageViewController()
+        imageVc.selectedImage = _image
+        self.navigationController?.pushViewController(imageVc, animated: true)
+        print("segued to new vc: ")
     }
     
     

@@ -11,6 +11,7 @@
 		B71161D81D34607B00E43261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71161D71D34607B00E43261 /* Assets.xcassets */; };
 		B71161DB1D34607B00E43261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71161D91D34607B00E43261 /* LaunchScreen.storyboard */; };
 		B71161E31D34616500E43261 /* ISViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71161E21D34616500E43261 /* ISViewController.swift */; };
+		B71161E51D346FD000E43261 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71161E41D346FD000E43261 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B71161DA1D34607B00E43261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71161DC1D34607B00E43261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B71161E21D34616500E43261 /* ISViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISViewController.swift; sourceTree = "<group>"; };
+		B71161E41D346FD000E43261 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				B71161D01D34607B00E43261 /* AppDelegate.swift */,
 				B71161E21D34616500E43261 /* ISViewController.swift */,
+				B71161E41D346FD000E43261 /* ImageViewController.swift */,
 				B71161D71D34607B00E43261 /* Assets.xcassets */,
 				B71161D91D34607B00E43261 /* LaunchScreen.storyboard */,
 				B71161DC1D34607B00E43261 /* Info.plist */,
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71161E31D34616500E43261 /* ISViewController.swift in Sources */,
+				B71161E51D346FD000E43261 /* ImageViewController.swift in Sources */,
 				B71161D11D34607B00E43261 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
