@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ISViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ISViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
     var imagesTable: UITableView!
     
@@ -37,7 +37,7 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func selectPhotoSource(){
-        print("selectPhotoSource")
+        //print("selectPhotoSource")
         
         let actionSheet = UIAlertController(
             title: "Select Image Source",
@@ -47,6 +47,7 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { action in
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.sourceType = .PhotoLibrary //the camera will crash the simulator!
             //imagePicker.sourceType = .Camera
             self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -54,12 +55,16 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
         
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .Default, handler: { action in
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.sourceType = .PhotoLibrary
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }))
         
         self.presentViewController(actionSheet, animated: true, completion: nil)
         
+    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        print("didFinishPickingMediaWithInfo: ")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
