@@ -102,7 +102,7 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let imageVc = ImageViewController()
         imageVc.selectedImage = _image
         self.navigationController?.pushViewController(imageVc, animated: true)
-        print("segued to new vc: ")
+        //print("segued to new vc: ")
     }
     
     

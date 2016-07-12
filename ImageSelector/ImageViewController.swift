@@ -15,9 +15,15 @@ class ImageViewController: UIViewController {
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
         let view = UIView(frame: frame)
-        view.backgroundColor = .redColor()
+        view.backgroundColor = .whiteColor()
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 120, width: frame.size.width, height: frame.size.width))
+        //ensures aspect ratio is not lost when hard coded.
+        let width = frame.size.width
+        let scale = width/self.selectedImage.size.width
+        let height = scale*self.selectedImage.size.height
+        
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 120, width: width, height: height))
         imageView.image = self.selectedImage
         view.addSubview(imageView)
         
