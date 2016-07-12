@@ -30,11 +30,11 @@ class ImageViewController: UIViewController, UITextFieldDelegate {
         let height = scale*self.selectedImage.size.height
         
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 120, width: width, height: height))
+        let imageView = UIImageView(frame: CGRect(x: 20, y: 64, width: width-40, height: height))
         imageView.image = self.selectedImage
         view.addSubview(imageView)
         
-        self.captionField = UITextField(frame: CGRect(x: 20, y: 440, width: width-40, height: 22))
+        self.captionField = UITextField(frame: CGRect(x: 10, y: 340, width: width-20, height: 44))
         captionField.backgroundColor = .whiteColor()
         self.captionField.delegate = self
         view.addSubview(self.captionField)
@@ -42,8 +42,9 @@ class ImageViewController: UIViewController, UITextFieldDelegate {
         //let font = UIFont(name: "Arial", size: 16)
         //let str = NSString(string: self.buttonTitle)
         //let bounds = str.boundingRectWithSize(CGSizeMake(frame.size.width-40, 1200), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName:font!], context: nil)
-        self.captionButton = UIButton(frame: CGRect(x: 20, y: 560, width: width-40, height: 22))
+        self.captionButton = UIButton(frame: CGRect(x: 10, y: 460, width: width-20, height: 22))
         captionButton.backgroundColor = .redColor()
+        captionButton.contentHorizontalAlignment = .Center
         
         self.captionButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         //self.captionButton.
