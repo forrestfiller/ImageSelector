@@ -8,14 +8,21 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+class ImageViewController: UIViewController, UITextFieldDelegate {
+    
+    //add text field beow the image, and have a button that says :submit", it will becomes the caption of the image in the tableview
     
     var selectedImage: UIImage!
+    var captionField: UITextField!
+    var captionButton: UIButton!
+    var buttonTitle = "Submit"
     
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
         let view = UIView(frame: frame)
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .lightGrayColor()
+        
+        
         
         //ensures aspect ratio is not lost when hard coded.
         let width = frame.size.width
@@ -27,6 +34,24 @@ class ImageViewController: UIViewController {
         imageView.image = self.selectedImage
         view.addSubview(imageView)
         
+        self.captionField = UITextField(frame: CGRect(x: 20, y: 440, width: width-40, height: 22))
+        captionField.backgroundColor = .whiteColor()
+        self.captionField.delegate = self
+        view.addSubview(self.captionField)
+        
+        //let font = UIFont(name: "Arial", size: 16)
+        //let str = NSString(string: self.buttonTitle)
+        //let bounds = str.boundingRectWithSize(CGSizeMake(frame.size.width-40, 1200), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName:font!], context: nil)
+        self.captionButton = UIButton(frame: CGRect(x: 20, y: 560, width: width-40, height: 22))
+        captionButton.backgroundColor = .redColor()
+        
+        self.captionButton.setTitle(buttonTitle, forState: UIControlState.Normal)
+        //self.captionButton.
+        
+        view.addSubview(self.captionButton)
+        
+        
+        
         
         self.view = view
     }
@@ -35,6 +60,15 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.captionField.resignFirstResponder()
+        print("textFieldShouldReturn: ")
+        let captionText = self.captionField.text!
+        // some func that takes 'captionText' and passes to the tableview
+        
+        return true
     }
 
     override func didReceiveMemoryWarning() {
