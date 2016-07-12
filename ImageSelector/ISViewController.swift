@@ -11,6 +11,7 @@ import UIKit
 class ISViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
     var imagesTable: UITableView!
+    var imagesArray = Array<UIImage>() //instansiate this array right away
     
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
@@ -64,22 +65,32 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
         
     }
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
-        print("didFinishPickingMediaWithInfo: ")
+        print("didFinishPickingMediaWithInfo: \(info)")
+        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.imagesArray.append(selectedImage)
+            
+            self.imagesTable.reloadData()
+            picker.dismissViewControllerAnimated(true, completion: nil)
+            
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return self.imagesArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let _image = imagesArray[indexPath.row]
         let cellId = "cellId"
         if let cell = tableView.dequeueReusableCellWithIdentifier(cellId){
             cell.textLabel?.text = "\(indexPath.row)"
+            cell.imageView?.image = _image
             return cell
         }
         
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellId)
         cell.textLabel?.text = "\(indexPath.row)"
+        cell.imageView?.image = _image
         return cell
     }
     
