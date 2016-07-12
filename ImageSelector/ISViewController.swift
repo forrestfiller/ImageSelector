@@ -50,8 +50,8 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { action in
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = .PhotoLibrary //the camera will crash the simulator!
-            //imagePicker.sourceType = .Camera
+            imagePicker.sourceType = .Camera //the camera will crash the simulator!
+            //imagePicker.sourceType = .PhotoLibrary
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }))
         
