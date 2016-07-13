@@ -13,6 +13,8 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
     var imagesTable: UITableView!
     var imagesArray = Array<UIImage>() //instansiate this array right away
     var _image: ImageViewController!
+    //var _ISViewController: ISViewController!
+    //var _captionButton: UIButton
     
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
