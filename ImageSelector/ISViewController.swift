@@ -11,10 +11,9 @@ import UIKit
 class ISViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
     var imagesTable: UITableView!
-    var imagesArray = Array<UIImage>() //instansiate this array right away
+    var imagesArray = Array<ISimage>() //instansiate this array right away
     var _image: ImageViewController!
-    //var _ISViewController: ISViewController!
-    //var _captionButton: UIButton
+    
     
     override func loadView() {
         let frame = UIScreen.mainScreen().bounds
@@ -86,23 +85,23 @@ class ISViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let cellId = "cellId"
         if let cell = tableView.dequeueReusableCellWithIdentifier(cellId){
             cell.textLabel?.text = "\(indexPath.row)"
-            cell.imageView?.image = _image
+            cell.imageView?.image = _image.image
             return cell
         }
         
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellId)
         cell.textLabel?.text = "\(indexPath.row)"
-        cell.imageView?.image = _image
+        cell.imageView?.image = _image.image
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         //animate cell when selected:
         tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true)
         // seque to new instaVc:
-        let _image = self.imagesArray[indexPath.row]
-        let imageVc = ImageViewController()
-        imageVc.selectedImage = _image
-        self.navigationController?.pushViewController(imageVc, animated: true)
+//        let _image = self.imagesArray[indexPath.row]
+//        let imageVc = ImageViewController()
+//        imageVc.selectedImage = _image.image
+//        self.navigationController?.pushViewController(imageVc, animated: true)
         //print("segued to new vc: ")
     }
     

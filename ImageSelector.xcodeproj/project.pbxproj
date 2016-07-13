@@ -12,7 +12,7 @@
 		B71161DB1D34607B00E43261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71161D91D34607B00E43261 /* LaunchScreen.storyboard */; };
 		B71161E31D34616500E43261 /* ISViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71161E21D34616500E43261 /* ISViewController.swift */; };
 		B71161E51D346FD000E43261 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71161E41D346FD000E43261 /* ImageViewController.swift */; };
-		B7F924E61D35CC4F000C601A /* Caption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F924E51D35CC4F000C601A /* Caption.swift */; };
+		B7FAF18E1D36F3D8000F7E1C /* ISimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FAF18D1D36F3D8000F7E1C /* ISimage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		B71161DC1D34607B00E43261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B71161E21D34616500E43261 /* ISViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISViewController.swift; sourceTree = "<group>"; };
 		B71161E41D346FD000E43261 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		B7F924E51D35CC4F000C601A /* Caption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caption.swift; sourceTree = "<group>"; };
+		B7FAF18D1D36F3D8000F7E1C /* ISimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISimage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 		B7F924E41D35CC25000C601A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B7F924E51D35CC4F000C601A /* Caption.swift */,
+				B7FAF18D1D36F3D8000F7E1C /* ISimage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,8 +147,8 @@
 			files = (
 				B71161E31D34616500E43261 /* ISViewController.swift in Sources */,
 				B71161E51D346FD000E43261 /* ImageViewController.swift in Sources */,
-				B7F924E61D35CC4F000C601A /* Caption.swift in Sources */,
 				B71161D11D34607B00E43261 /* AppDelegate.swift in Sources */,
+				B7FAF18E1D36F3D8000F7E1C /* ISimage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
